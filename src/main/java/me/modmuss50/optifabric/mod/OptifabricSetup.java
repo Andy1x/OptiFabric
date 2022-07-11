@@ -320,8 +320,12 @@ public class OptifabricSetup implements Runnable {
 					}
 				});
 			}	
-		} else if (isPresent("charm", ">=3.0")) {
+		} else if (isPresent("charm", ">=3.0 <4.0")) {
 			Mixins.addConfiguration("optifabric.compat.charm.mixins.json");
+
+		} else if (isPresent ("charm", ">=4.0")) {
+			Mixins.addConfiguration("optifabric.compat.charm-new.mixins.json")
+		
 		}
 
 		if (isPresent("voxelmap")) {
